@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% form_theme formArticle 'bootstrap_4_layout.html.twig' %}
+{% block body %}
+    <div class="container">
+        <h1> create page</h1>
+        {{ form_start(formArticle) }}
+
+        {{ form_row(formArticle.title,{'attr': {
+            'placeholder': "Titre de l'article"
+        }}) }}
+        {{ form_row(formArticle.image,{'attr': {
+            'placeholder': "Image de l'article"
+        }}) }}
+        {{ form_row(formArticle.description,{'attr': {
+            'placeholder': "Description"
+        }}) }}
+        {{ form_row(formArticle.price,{'attr': {
+            'placeholder': "Prix"
+        }}) }}
+        
+        <button type="submit"> 
+        
+        {% if editMode %}
+            Enregistrer les modifications de  l'annonce
+        {% else %} 
+            Créer une annonce 
+        {% endif %}
+        </button>
+        {{ form_end(formArticle) }}
+    </div>
+{% endblock %}

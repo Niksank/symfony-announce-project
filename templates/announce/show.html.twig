@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container">
+<div class="row">
+  <div class="col">
+    <!-- ARTICLE 1 -->
+    <section class="my-5">
+
+      <!-- Section heading -->
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-lg-5">
+
+          <!-- Featured image -->
+          <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
+            <img class="img-fluid" src="https://mdbootstrap.com/img/Photos/Others/img%20(27).jpg" alt="Sample image">
+            <a>
+              <div class="mask rgba-white-slight"></div>
+            </a>
+          </div>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-lg-7">
+
+      
+
+          <!-- Post title -->
+          <h3 class="font-weight-bold mb-3"><strong>{{article.title}}</strong></h3> <hr>
+          <!-- Excerpt -->
+          <h4 class="text-primary mb-4">19$</h4>
+          <!-- Category -->
+          <h6 class="mb-3">Voiture</h6>
+          
+          <!-- Post data -->
+          <p>Aujourd'hui, à 19:58</p>
+          <!-- Read more button -->
+          <a class="btn btn-outline-success text-success float-right">Voir davantage</a>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+  </div>  
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <style>
+           
+            .container {
+                max-width: 1140px;
+            }
+
+          
+            .container {
+                max-width: 960px;
+            }
+
+            .container {
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .align-icon{
+                display: inline-block;
+                text-align: center;
+                margin: 10px auto;
+            }
+        </style>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        {% block stylesheets %}{% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            <div class="row justify-content-md-center">
+                <div class="col-2"> 
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/LogoQDM.png" width="200px"/> 
+        
+                </div>
+                 <div class="col-sm ml-5"> 
+                 <a href="{{ path('create_announce')}}">
+                    <button type="button" style="height: 69%;width: 30%;"class="btn btn-primary btn-sm"> 
+                        <i class="far fa-plus-square"></i> 
+                        Déposer une annonce
+                    </button>  
+                </a>  
+                </div>
+      
+                <div class="col-md-auto align-icon" ><em class="fas fa-search"></em> <p>Rechercher</p></div>
+                <div class="col-md-auto align-icon" ><em class="fas fa-user"></em> <p>Se connecter</p></div>
+                <div class="col-md-auto align-icon" ><em class="fas fa-user"></em> <p>Se connecter</p></div>
+                </div>
+            </div>
+
+            <nav class="mb-1 navbar navbar-expand-lg navbar-light bg-light w-100">
+                <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <ul class="navbar-nav mr-2">
+                        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Toute catégories </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="">Action</a> <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="">Something else here</a> 
+                        </div>
+                        </li>
+                    </ul>
+                    <button class="btn btn-outline-success mr-2 my-sm-0 w-auto" type="submit">Rechercher </button>
+                    </form>
+                </div>
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+                    <li class="nav-item avatar"> 
+                    <a class="nav-link p-0" href=""> 
+                        <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-5.jpg" class="rounded-circle z-depth-0"
+                            alt="avatar image" height="35"> 
+                    </a> 
+                    </li>
+                </ul>
+                </div>
+            </nav>
+        {% block body %}
+        
+        
+        {% endblock %}
+        {% block javascripts %}
+            <script src="https://kit.fontawesome.com/4c8549bbc9.js"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> 
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> 
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        {% endblock %}
+    </body>
+</html>
