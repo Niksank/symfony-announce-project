@@ -12,6 +12,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 use App\Entity\Article;
+use App\Entity\Category;
 use App\Repository\ArticleRepository;
 use App\Form\ArticleType;
 
@@ -65,6 +66,7 @@ class AnnounceController extends AbstractController
             
             $file = $article->getImage();
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
+            //dd($fileName);
             // Move the file to the directory where brochures are stored
             try {
                 $file->move(
@@ -80,7 +82,7 @@ class AnnounceController extends AbstractController
             $manager->persist($article);
             $manager->flush();
             
-            //return $this->redirectToRoute('show_announce',['id'=> $article->getId()]);
+            return $this->redirectToRoute('show_announce',['id'=> $article->getId()]);
         }
         
         return $this->render('announce/create.html.twig',[

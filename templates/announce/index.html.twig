@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 
+
 {% block title %}Hello AnnounceController!{% endblock %}
 
 {% block body %}
@@ -49,9 +50,10 @@
             <!-- Post title -->
             <h3 class="font-weight-bold mb-3"><strong>{{ article.title }}</strong></h3> <hr>
             <!-- Excerpt -->
+    
             <h4 class="text-primary mb-4">{{ article.price }}$</h4>
             <!-- Category -->
-            <h6 class="mb-3">Voiture</h6>
+            <h6 class="mb-3">{{ article.category.title }}</h6>
             
             <!-- Post data -->
             <p>{{ article.createdAt |date("m/d/Y", "Europe/Paris") }}</p>
