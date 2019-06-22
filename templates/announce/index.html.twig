@@ -1,8 +1,5 @@
 {% extends 'base.html.twig' %}
 
-
-{% block title %}Hello AnnounceController!{% endblock %}
-
 {% block body %}
 <div class="container">
 
@@ -51,7 +48,7 @@
             <h3 class="font-weight-bold mb-3"><strong>{{ article.title }}</strong></h3> <hr>
             <!-- Excerpt -->
     
-            <h4 class="text-primary mb-4">{{ article.price }}$</h4>
+            <h4 class="text-primary mb-4">{{ article.price | number_format(2, '.', ',') }}$</h4>
             <!-- Category -->
             <h6 class="mb-3">{{ article.category.title }}</h6>
             

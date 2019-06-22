@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1> Inscritpion</h1>
+    <div class="container">
+
+        {{ form_start(form) }}
+
+            {{ form_row(form.firstname,{
+                'label': 'Nom',
+                'attr': {
+                    'placeholder': 'Votre nom'
+                }
+            }) }}
+
+            {{ form_row(form.lastname,{
+                'label': 'Prénom',
+                'attr': {
+                    'placeholder': 'Votre prénom'
+                }
+            }) }}
+
+            {{ form_row(form.email,{
+                'label': 'Email',
+                'attr': {
+                    'placeholder': 'Votre mail'
+                }
+            }) }}
+
+            {{ form_row(form.phoneNumber,{
+                'label': 'Numéro portal',
+                'attr': {
+                    'placeholder': '0600000000'
+                }
+            }) }} 
+
+
+            {{ form_row(form.password,{
+                'label': 'Mot de passe',
+                'attr': {
+                    'placeholder': 'Votre mot de passe'
+                }
+            }) }}
+
+            {{ form_row(form.confirm_password,{
+                'label': 'Confirmation de mot de passe',
+                'attr': {
+                    'placeholder': 'Entrez à nouveau votre mot de passe'
+                }
+            }) }}
+            
+            <button type="submit"> Inscrivez-vous</button>
+        {{ form_end (form) }}
+        
+</div>
+   
+{% endblock %}

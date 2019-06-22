@@ -7,7 +7,6 @@
     <section class="my-5">
 
       <!-- Section heading -->
-
       <!-- Grid row -->
       <div class="row">
 
@@ -33,7 +32,7 @@
           <!-- Post title -->
           <h3 class="font-weight-bold mb-3"><strong>{{article.title}}</strong></h3> <hr>
           <!-- Excerpt -->
-          <h4 class="text-primary mb-4">{{article.price}}€</h4>
+          <h4 class="text-primary mb-4">{{article.price | number_format(2, '.', ',') }}€</h4>
           <!-- Category -->
           <h6 class="mb-3">{{ article.category.title }}</h6>
           
@@ -42,8 +41,7 @@
 
           <p>{{article.description}}</p>
           <!-- Read more button -->
-          <a class="btn btn-outline-success text-success float-right">Voir davantage</a>
-
+          <a href="{{ path('delete_announce', {'id': article.id}) }}" class="btn btn-outline-danger text-danger float-right">Supprimer votre annonce</a>
         </div>
         <!-- Grid column -->
 

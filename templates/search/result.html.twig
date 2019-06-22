@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SearchController!{% endblock %}
+
+{% block body %}
+<div class="container"> 
+{% for post in posts %}
+{{ post.description }}
+
+{% endfor %}
+</div>
+{% endblock %}

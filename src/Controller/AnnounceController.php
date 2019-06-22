@@ -16,7 +16,7 @@ use App\Entity\Category;
 use App\Repository\ArticleRepository;
 use App\Form\ArticleType;
 
-class AnnounceController extends AbstractController
+class AnnounceController extends AbstractController 
 {
     /**
      * @Route("/annonce", name="announce")
@@ -91,6 +91,26 @@ class AnnounceController extends AbstractController
         ]);
     }
 
+
+    /**
+     * @Route("/annonce/delete/{id}", name="delete_announce")
+     */
+    public function remove($id, ObjectManager $manager, ArticleRepository $repo){
+        $article = $repo-> find($id); 
+        if (!$article) {
+            throw $this->createNotFoundException(
+                'Impossible de trouver une annonce avec l\'id: '.$id
+            );
+
+        }
+
+        $manager->remove($article);
+        $manager->flush();
+
+        return $this->render('announce/remove.html.twig');
+
+    }
+
     /**
      * @Route("/annonce/{id}", name="show_announce")
      */
@@ -100,7 +120,32 @@ class AnnounceController extends AbstractController
             'article' => $article
         ]);
     }
+    
+    /**
+     * @Route("/search", name="search_announce")
+     */
+    public function search(Request $request, ArticleRepository $repo) {
 
+        //dump($request->request->get('query')); 
+        //die;
+
+        $q = $request->request->get('query');
+        $posts = $repo->findPostsByName($q);
+
+        if(!$posts){
+            dd("Pas de query avec cette valeur");
+            die;
+        }
+
+        return $this->render('search/result.html.twig', [
+            'posts' => $posts
+        ]);
+        //dump($post);
+        //die;
+        
+    }
+
+    
     /**
      * @return string
      */
